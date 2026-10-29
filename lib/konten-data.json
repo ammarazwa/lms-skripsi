@@ -1,0 +1,666 @@
+{
+  "blok": {
+    "0": {
+      "nama": "Latihan",
+      "judul": "Latihan memakai LMS",
+      "level": "latihan",
+      "pengantar": "Soal latihan ini hanya untuk membiasakan diri dengan tampilan LMS dan formulir NASA-TLX. Jawabanmu tidak dinilai. Baca bahan dulu, lalu kerjakan soal. Pindah soal lewat nomor soal atau tombol Sebelumnya dan Berikutnya; bahan bisa dibuka lagi lewat Bacaan.",
+      "bahan": {
+        "teks": {
+          "judul": "Teks A: Layanan Perpustakaan Pusat",
+          "paragraf": [
+            "Perpustakaan pusat kampus melayani peminjaman buku untuk semua mahasiswa aktif. Setiap mahasiswa boleh meminjam paling banyak tiga buku selama tujuh hari. Ruang baca di lantai dua dapat dipakai tanpa perlu meminjam buku."
+          ]
+        },
+        "tabel": {
+          "judul": "Tabel B: Jam buka perpustakaan pusat",
+          "kolom": [
+            "Hari",
+            "Jam buka"
+          ],
+          "baris": [
+            [
+              "Senin–Kamis",
+              "08.00–20.00"
+            ],
+            [
+              "Jumat",
+              "08.00–16.00"
+            ],
+            [
+              "Sabtu",
+              "09.00–13.00"
+            ],
+            [
+              "Minggu",
+              "Tutup"
+            ]
+          ]
+        }
+      },
+      "soal": [
+        {
+          "id": "L1",
+          "tipe": "pg",
+          "level": "latihan",
+          "teks": "Menurut pengumuman kelas, berapa lama perkiraan total sesi hari ini?",
+          "opsi": [
+            "Sekitar 30 menit",
+            "Sekitar 60 menit",
+            "Sekitar 90 menit",
+            "Sekitar 120 menit",
+            "Tidak disebutkan"
+          ],
+          "kunci": 2,
+          "mandiri": true
+        },
+        {
+          "id": "L2",
+          "tipe": "pg",
+          "level": "latihan",
+          "teks": "Berdasarkan Tabel B, pukul berapa perpustakaan pusat tutup pada hari Jumat?",
+          "opsi": [
+            "Pukul 08.00",
+            "Pukul 13.00",
+            "Pukul 16.00",
+            "Pukul 20.00",
+            "Tutup sepanjang hari"
+          ],
+          "kunci": 2
+        },
+        {
+          "id": "L3",
+          "tipe": "esai",
+          "level": "latihan",
+          "teks": "Tulis satu kalimat tentang kegiatanmu pagi ini.",
+          "min_kata": 5,
+          "mandiri": true
+        }
+      ]
+    },
+    "1": {
+      "nama": "Blok 1",
+      "judul": "Mengingat & Memahami",
+      "level": "LOTS",
+      "pengantar": "Baca bahan (teks dan tabel) terlebih dahulu, lalu kerjakan 8 soal: 6 pilihan ganda dan 2 isian. Soal dapat dibuka setelah waktu baca minimal. Bahan bisa dibuka lagi kapan saja lewat Bacaan di nomor soal. Jawaban tersimpan otomatis.",
+      "bahan": {
+        "teks": {
+          "judul": "Teks A: Bank Sampah Rukun Lestari",
+          "paragraf": [
+            "Bank Sampah Rukun Lestari berdiri di Kelurahan Sukamaju pada awal 2025. Cara kerjanya mirip bank biasa. Warga datang membawa sampah yang sudah dipilah, petugas menimbangnya, lalu nilai sampah itu dicatat sebagai tabungan di buku nasabah. Tabungan dapat diambil dalam bentuk uang tunai setiap akhir bulan atau dipakai untuk membayar iuran kebersihan.",
+            "Sampah yang diterima dibagi menjadi empat jenis, yaitu plastik, kertas, logam, dan kaca. Setiap jenis memiliki harga per kilogram yang berbeda. Logam dihargai paling tinggi karena paling mudah dijual kembali ke pengepul, sedangkan kaca dihargai paling rendah karena berat dan mudah pecah saat diangkut. Kertas hanya diterima jika kering dan tidak bercampur sisa makanan.",
+            "Pada bulan-bulan pertama, sebagian besar warga enggan memilah sampah di rumah. Menurut mereka, memilah sampah itu merepotkan, sedangkan uang yang didapat kecil. Pengurus lalu membagikan dua karung berbeda warna ke setiap rumah dan mengumumkan nama nasabah dengan saldo terbanyak setiap bulan di papan pengumuman RW. Sejak itu, jumlah nasabah aktif naik dari 40 orang pada bulan Januari menjadi 95 orang pada bulan Mei.",
+            "Bagi pengurus, uang bukan tujuan utama. Sampah yang sudah dipilah tidak lagi berakhir di tempat pembuangan akhir, sehingga muatan truk sampah kelurahan berkurang. Ketua pengurus, Bu Ratna, menyebut bank sampah sebagai \"cara paling sederhana untuk membuat warga peduli lingkungan tanpa harus diceramahi\"."
+          ]
+        },
+        "tabel": {
+          "judul": "Tabel B: Sampah yang disetor ke Bank Sampah Rukun Lestari (kg)",
+          "kolom": [
+            "Jenis sampah",
+            "Harga per kg (Rp)",
+            "Maret",
+            "April",
+            "Mei"
+          ],
+          "baris": [
+            [
+              "Plastik",
+              "3.000",
+              "120",
+              "150",
+              "180"
+            ],
+            [
+              "Kertas",
+              "1.500",
+              "200",
+              "210",
+              "190"
+            ],
+            [
+              "Logam",
+              "8.000",
+              "30",
+              "35",
+              "45"
+            ],
+            [
+              "Kaca",
+              "500",
+              "60",
+              "50",
+              "55"
+            ]
+          ],
+          "catatan": "Kolom Maret, April, dan Mei berisi berat sampah yang disetor dalam kilogram."
+        }
+      },
+      "soal": [
+        {
+          "id": "B1Q1",
+          "tipe": "pg",
+          "level": "C1",
+          "subtes": "PBM",
+          "ranah": "verbal",
+          "teks": "Menurut Teks A, dalam bentuk apa tabungan nasabah dapat diambil?",
+          "opsi": [
+            "Uang tunai setiap minggu",
+            "Uang tunai setiap akhir bulan atau pembayaran iuran kebersihan",
+            "Pembayaran iuran kebersihan saja",
+            "Karung sampah baru atau uang tunai",
+            "Hadiah bagi nasabah dengan saldo terbanyak"
+          ],
+          "kunci": 1
+        },
+        {
+          "id": "B1Q2",
+          "tipe": "pg",
+          "level": "C2",
+          "subtes": "PPU",
+          "ranah": "verbal",
+          "teks": "Kata \"enggan\" pada paragraf ketiga Teks A paling dekat maknanya dengan ...",
+          "opsi": [
+            "malu",
+            "tidak mampu",
+            "lupa",
+            "tidak mau",
+            "terpaksa"
+          ],
+          "kunci": 3
+        },
+        {
+          "id": "B1Q3",
+          "tipe": "pg",
+          "level": "C2",
+          "subtes": "PU",
+          "ranah": "verbal",
+          "teks": "Perhatikan dua pernyataan berikut.\n(1) Semua nasabah bank sampah memiliki buku tabungan.\n(2) Pak Joko adalah nasabah bank sampah.\nSimpulan yang tepat adalah ...",
+          "opsi": [
+            "Pak Joko memiliki buku tabungan.",
+            "Pak Joko belum memiliki buku tabungan.",
+            "Pak Joko adalah pengurus bank sampah.",
+            "Semua pemilik buku tabungan adalah nasabah bank sampah.",
+            "Pak Joko menabung setiap bulan."
+          ],
+          "kunci": 0,
+          "mandiri": true
+        },
+        {
+          "id": "B1Q4",
+          "tipe": "pg",
+          "level": "C1",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Berdasarkan Tabel B, berapa kilogram plastik yang disetor pada bulan April?",
+          "opsi": [
+            "35 kg",
+            "120 kg",
+            "150 kg",
+            "180 kg",
+            "210 kg"
+          ],
+          "kunci": 2
+        },
+        {
+          "id": "B1Q5",
+          "tipe": "pg",
+          "level": "C2",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Berdasarkan Tabel B, jenis sampah apa yang setorannya turun dari bulan April ke bulan Mei?",
+          "opsi": [
+            "Plastik",
+            "Logam",
+            "Kaca",
+            "Plastik dan kaca",
+            "Kertas"
+          ],
+          "kunci": 4
+        },
+        {
+          "id": "B1Q6",
+          "tipe": "pg",
+          "level": "C2",
+          "subtes": "PU",
+          "ranah": "kuantitatif",
+          "teks": "Perhatikan barisan bilangan berikut.\n2, 5, 8, 11, ...\nBilangan ke-6 dari barisan tersebut adalah ...",
+          "opsi": [
+            "14",
+            "15",
+            "16",
+            "17",
+            "20"
+          ],
+          "kunci": 3,
+          "mandiri": true
+        },
+        {
+          "id": "B1Q7",
+          "tipe": "esai",
+          "level": "C2",
+          "subtes": "PBM",
+          "ranah": "verbal",
+          "teks": "Tulis ide pokok Teks A secara keseluruhan dalam satu atau dua kalimat dengan bahasamu sendiri.",
+          "min_kata": 20
+        },
+        {
+          "id": "B1Q8",
+          "tipe": "esai",
+          "level": "C2",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Berdasarkan Tabel B, jelaskan dengan kalimatmu sendiri perubahan setoran plastik dan kertas dari bulan Maret sampai Mei.",
+          "min_kata": 20
+        }
+      ]
+    },
+    "2": {
+      "nama": "Blok 2",
+      "judul": "Menerapkan",
+      "level": "MOTS",
+      "pengantar": "Baca bahan (teks dan tabel) terlebih dahulu, lalu kerjakan 8 soal: 6 pilihan ganda dan 2 isian. Soal dapat dibuka setelah waktu baca minimal. Bahan bisa dibuka lagi kapan saja lewat Bacaan di nomor soal. Jawaban tersimpan otomatis.",
+      "bahan": {
+        "teks": {
+          "judul": "Teks A: Bus Kampus Si Biru",
+          "paragraf": [
+            "Sejak semester lalu, Universitas Nusa Lestari mengoperasikan bus kampus bernama Si Biru. Bus ini melayani tiga rute yang menghubungkan asrama, gedung kuliah, dan stasiun kereta. Pengelola berharap mahasiswa tidak lagi membawa kendaraan pribadi ke kampus sehingga sebagian lahan parkir dapat diubah menjadi taman.",
+            "Tarif Si Biru diatur sebagai berikut. Setiap perjalanan dikenai tarif Rp2.000 bagi mahasiswa dan Rp4.000 bagi penumpang umum. Penumpang yang berpindah ke rute lain dalam waktu 30 menit sejak turun tidak dikenai tarif lagi untuk perjalanan sambungannya. Pada hari Sabtu, semua tarif dipotong setengah, sedangkan pada hari Minggu bus tidak beroperasi.",
+            "Pembayaran hanya dapat dilakukan dengan kartu mahasiswa atau kartu uang elektronik. Pengelola sengaja tidak menerima uang tunai agar bus tidak berhenti terlalu lama di setiap halte. Menurut catatan pengelola, waktu berhenti rata-rata di halte turun dari dua menit menjadi kurang dari satu menit setelah aturan ini berlaku. Bagi mahasiswa baru, kartu mahasiswa sudah dapat dipakai sejak hari pertama kuliah.",
+            "Meski begitu, keluhan masih ada. Beberapa mahasiswa menyebut bus pada pagi hari selalu penuh, sementara bus pada siang hari hampir kosong. Pengelola sedang mempertimbangkan untuk memindahkan sebagian jadwal siang ke pagi hari tanpa menambah jumlah bus."
+          ]
+        },
+        "tabel": {
+          "judul": "Tabel B: Rute dan jumlah penumpang Si Biru dalam satu minggu",
+          "kolom": [
+            "Rute",
+            "Jarak (km)",
+            "Waktu tempuh (menit)",
+            "Penumpang Senin–Jumat",
+            "Penumpang Sabtu"
+          ],
+          "baris": [
+            [
+              "Rute 1: Asrama – Gedung kuliah",
+              "3",
+              "10",
+              "2.400",
+              "300"
+            ],
+            [
+              "Rute 2: Gedung kuliah – Stasiun",
+              "6",
+              "18",
+              "1.500",
+              "450"
+            ],
+            [
+              "Rute 3: Asrama – Stasiun",
+              "8",
+              "24",
+              "900",
+              "250"
+            ]
+          ],
+          "catatan": "Waktu tempuh dihitung dari halte awal sampai halte akhir, tanpa waktu menunggu."
+        }
+      },
+      "soal": [
+        {
+          "id": "B2Q1",
+          "tipe": "pg",
+          "level": "C3",
+          "subtes": "PPU",
+          "ranah": "verbal",
+          "teks": "Kata \"sambungan\" pada paragraf kedua Teks A dipakai dengan makna yang SAMA dalam kalimat ...",
+          "opsi": [
+            "Sambungan pipa di dapur itu bocor sejak kemarin.",
+            "Kabel lampu itu putus tepat di bagian sambungannya.",
+            "Dari Jakarta, ia naik kereta sambungan menuju Yogyakarta.",
+            "Sambungan telepon dari luar negeri sering terputus.",
+            "Tulang yang patah itu belum menyatu di bagian sambungannya."
+          ],
+          "kunci": 2
+        },
+        {
+          "id": "B2Q2",
+          "tipe": "pg",
+          "level": "C3",
+          "subtes": "PBM",
+          "ranah": "verbal",
+          "teks": "Berdasarkan aturan dalam Teks A, pembayaran manakah yang SESUAI dengan aturan Si Biru?",
+          "opsi": [
+            "Andi, mahasiswa, membayar Rp2.000 dengan uang tunai pada hari Senin.",
+            "Sinta, mahasiswa, membayar Rp1.000 dengan kartu mahasiswa pada hari Minggu.",
+            "Lina, mahasiswa, membayar Rp2.000 dengan kartu mahasiswa pada hari Sabtu.",
+            "Dodi, penumpang umum, membayar Rp2.000 dengan kartu uang elektronik pada hari Selasa.",
+            "Pak Budi, penumpang umum, membayar Rp4.000 dengan kartu uang elektronik pada hari Rabu."
+          ],
+          "kunci": 4
+        },
+        {
+          "id": "B2Q3",
+          "tipe": "pg",
+          "level": "C3",
+          "subtes": "PU",
+          "ranah": "verbal",
+          "teks": "Berdasarkan aturan tarif dalam Teks A, seorang penumpang naik Si Biru tanpa dikenai tarif sama sekali. Simpulan yang pasti benar adalah ...",
+          "opsi": [
+            "Ia sedang melakukan perjalanan sambungan dalam waktu 30 menit setelah turun dari rute lain.",
+            "Ia naik pada hari Sabtu.",
+            "Ia adalah mahasiswa.",
+            "Ia naik pada hari Minggu.",
+            "Ia membayar dengan kartu uang elektronik."
+          ],
+          "kunci": 0
+        },
+        {
+          "id": "B2Q4",
+          "tipe": "pg",
+          "level": "C3",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Berdasarkan Tabel B, berapa persen penumpang Senin–Jumat yang naik Rute 1?",
+          "opsi": [
+            "25%",
+            "40%",
+            "45%",
+            "50%",
+            "60%"
+          ],
+          "kunci": 3
+        },
+        {
+          "id": "B2Q5",
+          "tipe": "pg",
+          "level": "C3",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Berdasarkan Tabel B, kecepatan rata-rata Si Biru pada Rute 2 adalah ...",
+          "opsi": [
+            "18 km/jam",
+            "20 km/jam",
+            "24 km/jam",
+            "30 km/jam",
+            "36 km/jam"
+          ],
+          "kunci": 1
+        },
+        {
+          "id": "B2Q6",
+          "tipe": "pg",
+          "level": "C3",
+          "subtes": "PU",
+          "ranah": "kuantitatif",
+          "teks": "Bus Si Biru pada suatu rute berangkat pertama kali pukul 06.00, lalu berangkat lagi setiap 12 menit. Bus yang berangkat pukul 07.00 adalah keberangkatan ke- ...",
+          "opsi": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "12"
+          ],
+          "kunci": 2,
+          "mandiri": true
+        },
+        {
+          "id": "B2Q7",
+          "tipe": "esai",
+          "level": "C3",
+          "subtes": "PBM",
+          "ranah": "verbal",
+          "teks": "Perbaiki kalimat berikut agar menjadi kalimat efektif dan sesuai kaidah bahasa Indonesia, lalu tulis kalimat hasil perbaikanmu.\n\"Bagi para mahasiswa-mahasiswa yang mana ingin naik bus kampus Si Biru, maka diharapkan agar supaya membayar dengan memakai kartu mahasiswa atau kartu uang elektronik dan tidak dengan uang tunai.\"",
+          "min_kata": 20,
+          "mandiri": true
+        },
+        {
+          "id": "B2Q8",
+          "tipe": "esai",
+          "level": "C3",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Pada hari Senin, Dina (mahasiswa) akan pergi dari asrama ke stasiun. Ia dapat naik Rute 3 langsung, atau naik Rute 1 lalu pindah ke Rute 2 setelah menunggu 5 menit di gedung kuliah. Dengan memakai Teks A dan Tabel B, hitung waktu tempuh dan tarif kedua pilihan itu. Tulis langkah perhitunganmu dan sebutkan pilihan yang lebih cepat.",
+          "min_kata": 20
+        }
+      ]
+    },
+    "3": {
+      "nama": "Blok 3",
+      "judul": "Menganalisis & Mengevaluasi",
+      "level": "HOTS",
+      "pengantar": "Baca bahan (teks dan tabel) terlebih dahulu, lalu kerjakan 8 soal: 6 pilihan ganda dan 2 isian. Soal dapat dibuka setelah waktu baca minimal. Bahan bisa dibuka lagi kapan saja lewat Bacaan di nomor soal. Jawaban tersimpan otomatis.",
+      "bahan": {
+        "teks": {
+          "judul": "Teks A: Kelas Tanpa Ponsel",
+          "paragraf": [
+            "Pada semester ganjil, SMA Harapan Bangsa menguji coba kebijakan kelas tanpa ponsel. Di kelas XI-A dan XI-B, siswa wajib menitipkan ponsel di loker sebelum pelajaran pertama dan baru boleh mengambilnya saat pulang. Kelas XI-C dan XI-D tetap boleh membawa ponsel seperti biasa. Kelas uji coba dipilih dari wali kelas yang bersedia ikut.",
+            "Di akhir semester, wakil kepala sekolah membandingkan rata-rata nilai ujian matematika keempat kelas dengan nilai semester sebelumnya. Hasilnya dimuat dalam Tabel B. Dalam rapat guru, ia menyatakan, \"Nilai kelas tanpa ponsel naik lebih tinggi daripada kelas lain. Artinya, larangan ponsel membuat siswa lebih fokus belajar. Kebijakan ini sebaiknya diberlakukan di semua kelas mulai semester depan.\"",
+            "Tidak semua guru setuju. Pak Hendra, guru matematika kelas XI-A dan XI-B, mengatakan bahwa sejak awal semester ganjil ia menambah satu jam latihan soal setiap minggu di kedua kelas itu atas permintaan wali kelas. Seorang guru lain mengingatkan bahwa wali kelas yang bersedia ikut uji coba mungkin memang lebih ketat dalam mengatur kelasnya.",
+            "Para siswa juga punya pendapat. Sebagian siswa kelas uji coba mengaku lebih jarang terganggu notifikasi. Namun, ada pula yang mengeluh sulit menghubungi orang tua ketika jadwal pulang berubah mendadak. Beberapa siswa kelas lain bahkan meminta kelasnya ikut uji coba semester depan."
+          ]
+        },
+        "tabel": {
+          "judul": "Tabel B: Rata-rata nilai ujian matematika (skala 0–100)",
+          "kolom": [
+            "Kelas",
+            "Kebijakan",
+            "Jumlah siswa",
+            "Semester genap lalu",
+            "Semester ganjil ini"
+          ],
+          "baris": [
+            [
+              "XI-A",
+              "Tanpa ponsel",
+              "32",
+              "68",
+              "76"
+            ],
+            [
+              "XI-B",
+              "Tanpa ponsel",
+              "30",
+              "72",
+              "78"
+            ],
+            [
+              "XI-C",
+              "Boleh ponsel",
+              "34",
+              "70",
+              "73"
+            ],
+            [
+              "XI-D",
+              "Boleh ponsel",
+              "31",
+              "65",
+              "70"
+            ]
+          ],
+          "catatan": "Soal ujian setiap semester disusun oleh tim guru matematika yang sama untuk keempat kelas."
+        }
+      },
+      "soal": [
+        {
+          "id": "B3Q1",
+          "tipe": "pg",
+          "level": "C5",
+          "subtes": "PU",
+          "ranah": "verbal",
+          "teks": "Pernyataan manakah yang paling MEMPERLEMAH simpulan wakil kepala sekolah bahwa larangan ponsel membuat nilai siswa naik?",
+          "opsi": [
+            "Sebagian siswa kelas uji coba mengaku lebih jarang terganggu notifikasi.",
+            "Rata-rata nilai XI-B pada semester ini adalah yang tertinggi.",
+            "Ada siswa yang sulit menghubungi orang tua ketika jadwal pulang berubah.",
+            "Kelas XI-A dan XI-B mendapat tambahan satu jam latihan soal setiap minggu.",
+            "Jumlah siswa di keempat kelas hampir sama."
+          ],
+          "kunci": 3
+        },
+        {
+          "id": "B3Q2",
+          "tipe": "pg",
+          "level": "C4",
+          "subtes": "PPU",
+          "ranah": "verbal",
+          "teks": "Hubungan isi paragraf ketiga dengan paragraf kedua Teks A adalah ...",
+          "opsi": [
+            "Paragraf ketiga memberi contoh yang mendukung simpulan pada paragraf kedua.",
+            "Paragraf ketiga menyajikan kemungkinan penyebab lain yang meragukan simpulan pada paragraf kedua.",
+            "Paragraf ketiga mengulang data pada paragraf kedua dengan kata-kata lain.",
+            "Paragraf ketiga menjelaskan cara kebijakan pada paragraf kedua dijalankan.",
+            "Paragraf ketiga menyampaikan pendapat siswa tentang kebijakan pada paragraf kedua."
+          ],
+          "kunci": 1
+        },
+        {
+          "id": "B3Q3",
+          "tipe": "pg",
+          "level": "C4",
+          "subtes": "PU",
+          "ranah": "verbal",
+          "teks": "Perhatikan pernyataan berikut.\n(1) Jika sebuah kelas mengikuti uji coba, siswanya menitipkan ponsel di loker.\n(2) Jika siswa menitipkan ponsel di loker, mereka tidak dapat dihubungi lewat ponsel selama pelajaran.\n(3) Siswa kelas XI-F dapat dihubungi lewat ponsel selama pelajaran.\nSimpulan yang pasti benar adalah ...",
+          "opsi": [
+            "Kelas XI-F mengikuti uji coba.",
+            "Siswa kelas XI-F menitipkan ponsel di loker.",
+            "Kelas XI-F tidak mengikuti uji coba.",
+            "Semua kelas yang tidak mengikuti uji coba dapat dihubungi selama pelajaran.",
+            "Siswa kelas XI-F tidak membawa ponsel ke sekolah."
+          ],
+          "kunci": 2,
+          "mandiri": true
+        },
+        {
+          "id": "B3Q4",
+          "tipe": "pg",
+          "level": "C4",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Berdasarkan Tabel B, pernyataan berikut yang BENAR adalah ...",
+          "opsi": [
+            "Kenaikan nilai XI-D lebih kecil daripada kenaikan nilai XI-C.",
+            "Kelas dengan nilai semester lalu terendah mengalami kenaikan terkecil.",
+            "Nilai setiap kelas tanpa ponsel naik lebih dari 7 poin.",
+            "Nilai XI-C semester ini lebih tinggi daripada nilai XI-B semester ini.",
+            "Selisih kenaikan nilai XI-B dan XI-D hanya 1 poin."
+          ],
+          "kunci": 4
+        },
+        {
+          "id": "B3Q5",
+          "tipe": "pg",
+          "level": "C4",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Kelas XI-E dibagi menjadi dua kelompok, yaitu kelompok X dan kelompok Y, yang masing-masing berisi beberapa siswa. Rata-rata nilai ujian kelompok X adalah 74.\nPertanyaan: Apakah rata-rata nilai seluruh siswa XI-E lebih dari 74?\n(1) Rata-rata nilai kelompok Y adalah 78.\n(2) Banyak siswa kelompok Y adalah 12 orang.\nManakah pernyataan yang cukup untuk menjawab pertanyaan tersebut?",
+          "opsi": [
+            "Pernyataan (1) SAJA cukup, tetapi pernyataan (2) SAJA tidak cukup.",
+            "Pernyataan (2) SAJA cukup, tetapi pernyataan (1) SAJA tidak cukup.",
+            "DUA pernyataan BERSAMA-SAMA cukup, tetapi SATU pernyataan SAJA tidak cukup.",
+            "Pernyataan (1) SAJA cukup dan pernyataan (2) SAJA cukup.",
+            "Pernyataan (1) dan pernyataan (2) TIDAK cukup."
+          ],
+          "kunci": 0,
+          "mandiri": true
+        },
+        {
+          "id": "B3Q6",
+          "tipe": "pg",
+          "level": "C5",
+          "subtes": "PU",
+          "ranah": "kuantitatif",
+          "teks": "Seorang guru menyimpulkan bahwa rata-rata nilai gabungan seluruh siswa kelas tanpa ponsel (XI-A dan XI-B) pada semester ini adalah 77, karena (76 + 78) : 2 = 77. Berdasarkan Tabel B, penilaian yang paling tepat terhadap simpulan itu adalah ...",
+          "opsi": [
+            "Tepat, karena rata-rata gabungan selalu sama dengan rata-rata dari kedua nilai rata-rata.",
+            "Kurang tepat, karena XI-A memiliki lebih banyak siswa sehingga rata-rata gabungannya sedikit di bawah 77.",
+            "Kurang tepat, karena XI-B memiliki nilai lebih tinggi sehingga rata-rata gabungannya sedikit di atas 77.",
+            "Tidak tepat, karena rata-rata gabungannya sama dengan nilai tertinggi, yaitu 78.",
+            "Tidak dapat dinilai, karena Tabel B tidak memuat jumlah siswa."
+          ],
+          "kunci": 1
+        },
+        {
+          "id": "B3Q7",
+          "tipe": "esai",
+          "level": "C5",
+          "subtes": "PBM",
+          "ranah": "verbal",
+          "teks": "Wakil kepala sekolah menyarankan agar kebijakan kelas tanpa ponsel diberlakukan di semua kelas. Nilailah apakah saran itu cukup didukung oleh Teks A dan Tabel B. Sertakan setidaknya dua alasan.",
+          "min_kata": 20
+        },
+        {
+          "id": "B3Q8",
+          "tipe": "esai",
+          "level": "C5",
+          "subtes": "PK",
+          "ranah": "kuantitatif",
+          "teks": "Misalkan semester depan kebijakan tanpa ponsel juga diberlakukan di XI-C dan XI-D, dan kenaikan nilai kedua kelas itu sama dengan rata-rata kenaikan XI-A dan XI-B semester ini. Hitung perkiraan nilai XI-C dan XI-D, tulis langkah perhitunganmu, lalu jelaskan satu alasan mengapa perkiraan itu bisa meleset.",
+          "min_kata": 20
+        }
+      ]
+    }
+  },
+  "tlx": {
+    "sumber": "NASA Task Load Index (NASA-TLX) — Hart & Staveland (1988); NASA Ames Research Center (1986). Nama dimensi, ujung skala, dan deskripsi: Widyanti, Johnson & de Waard (2010).",
+    "instruksi_rating": [
+      "Formulir ini mengukur beban kerja yang kamu rasakan selama mengerjakan tugas yang baru saja selesai.",
+      "Beri tanda pada setiap garis dengan mengklik satu titik yang paling sesuai dengan pengalamanmu. Nilai setiap skala secara terpisah, dan baca deskripsinya dengan saksama.",
+      "Perhatikan: skala Performansi bergerak dari \"Baik\" di kiri ke \"Jelek\" di kanan. Urutan ini sering membingungkan, jadi baca ujung-ujungnya dulu."
+    ],
+    "skala": [
+      {
+        "id": "MD",
+        "nama": "Kebutuhan Mental",
+        "en": "Mental Demand",
+        "kiri": "Rendah",
+        "kanan": "Tinggi",
+        "deskripsi": "Seberapa besar tuntutan aktivitas mental dan perseptual yang dibutuhkan dalam pekerjaan Anda (contoh: berpikir, memutuskan, menghitung, mengingat, melihat, mencari). Apakah pekerjaan tersebut mudah atau sulit, sederhana atau kompleks, longgar atau ketat?"
+      },
+      {
+        "id": "PD",
+        "nama": "Kebutuhan Fisik",
+        "en": "Physical Demand",
+        "kiri": "Rendah",
+        "kanan": "Tinggi",
+        "deskripsi": "Seberapa besar aktivitas fisik yang dibutuhkan dalam pekerjaan Anda (contoh: mendorong, menarik, memutar, mengontrol, menjalankan, dan lainnya). Apakah pekerjaan tersebut mudah atau sulit, pelan atau cepat, tenang atau buru-buru?"
+      },
+      {
+        "id": "TD",
+        "nama": "Kebutuhan Waktu",
+        "en": "Temporal Demand",
+        "kiri": "Rendah",
+        "kanan": "Tinggi",
+        "deskripsi": "Seberapa besar tekanan waktu yang Anda rasakan selama pekerjaan atau elemen pekerjaan berlangsung? Apakah pekerjaan perlahan dan santai, atau cepat dan melelahkan?"
+      },
+      {
+        "id": "OP",
+        "nama": "Performansi",
+        "en": "Performance",
+        "kiri": "Baik",
+        "kanan": "Jelek",
+        "deskripsi": "Seberapa besar keberhasilan Anda di dalam mencapai target pekerjaan Anda? Seberapa puas Anda dengan performansi Anda dalam mencapai target tersebut?"
+      },
+      {
+        "id": "EF",
+        "nama": "Tingkat Usaha",
+        "en": "Effort",
+        "kiri": "Rendah",
+        "kanan": "Tinggi",
+        "deskripsi": "Seberapa besar usaha yang Anda keluarkan secara mental dan fisik yang dibutuhkan untuk mencapai level performansi Anda?"
+      },
+      {
+        "id": "FR",
+        "nama": "Tingkat Frustrasi",
+        "en": "Frustration",
+        "kiri": "Rendah",
+        "kanan": "Tinggi",
+        "deskripsi": "Seberapa besar rasa tidak aman, putus asa, tersinggung, stres, dan terganggu dibanding dengan perasaan aman, puas, cocok, nyaman, dan kepuasan diri yang dirasakan selama mengerjakan pekerjaan tersebut?"
+      }
+    ],
+    "instruksi_bobot": [
+      "Bagian terakhir NASA-TLX: kamu akan melihat 15 pasang nama skala, satu pasang setiap kali.",
+      "Untuk setiap pasang, pilih skala yang lebih berpengaruh terhadap beban kerja yang kamu rasakan pada tugas-tugas hari ini (Blok 1 sampai Blok 3).",
+      "Tidak ada pola jawaban yang benar. Pilih sesuai pengalamanmu."
+    ]
+  }
+}
