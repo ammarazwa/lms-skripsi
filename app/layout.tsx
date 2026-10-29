@@ -5,7 +5,8 @@ import { Perekam } from "@/components/perekam";
 
 export const metadata: Metadata = {
   title: "LiVE | Ruang Eksperimen",
-  description: "Lingkungan pembelajaran eksperimental untuk penelitian beban kognitif (skripsi).",
+  // Topik umum saja: tujuan lengkap baru dijelaskan di halaman Penutup (debriefing), supaya rating NASA-TLX tidak terpengaruh.
+  description: "Lingkungan pembelajaran eksperimental untuk penelitian interaksi pengguna di LMS (skripsi).",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

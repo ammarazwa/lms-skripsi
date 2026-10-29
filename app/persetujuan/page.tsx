@@ -31,13 +31,14 @@ export default function Persetujuan() {
       <div className="page-header"><div><h1>Persetujuan partisipasi</h1><p className="sub">Baca dengan saksama sebelum memulai.</p></div></div>
       <div className="card">
         <h3>Tentang penelitian ini</h3>
-        <p>Kamu diundang mengikuti penelitian skripsi tentang <b>beban kognitif dalam pembelajaran daring</b>. Selama sesi, kamu akan mengerjakan tiga blok soal penalaran dan pemahaman bergaya Tes Potensi Skolastik (TPS) UTBK. Setelah setiap blok kamu mengisi kuesioner NASA-TLX, dan di antara blok ada istirahat singkat.</p>
-        <p>LMS ini merekam <b>pola interaksi</b> selama kamu belajar: durasi, klik, aktivitas mengetik (jumlah tombol, bukan isi ketikan di luar kolom jawaban), perpindahan halaman, dan gulir layar. Jawaban dan skor kuesioner disimpan dengan <b>kode peserta</b>, tanpa nama atau NPM.</p>
+        <p>Kamu diundang mengikuti penelitian skripsi berjudul <b>Analisis Interaksi Pengguna dalam Pembelajaran Daring pada Learning Management System</b>. Selama sesi, kamu akan mengerjakan satu blok latihan dan tiga blok soal penalaran dan pemahaman bergaya Tes Potensi Skolastik (TPS) UTBK. Setiap blok diawali dengan membaca bahan bacaan. Setelah setiap blok kamu mengisi kuesioner NASA-TLX, dan di antara blok ada istirahat singkat. Penjelasan lengkap mengenai tujuan penelitian disampaikan setelah sesi selesai.</p>
+        <p>LMS ini merekam <b>pola interaksi</b> selama kamu belajar: durasi, klik, aktivitas mengetik (jumlah dan jenis tombol, bukan isi ketikan di luar kolom jawaban), perpindahan halaman, gulir layar, perpindahan jendela, dan jarak gerakan mouse. Tidak ada perekaman wajah, suara, maupun layar. Jawaban dan skor kuesioner disimpan dengan <b>kode peserta</b>, tanpa nama atau NPM.</p>
         <ul>
           <li>Partisipasi bersifat sukarela; kamu boleh berhenti kapan saja tanpa konsekuensi.</li>
           <li>Hasil tugas <b>tidak</b> memengaruhi nilai mata kuliah apa pun.</li>
           <li>Data hanya digunakan untuk keperluan penelitian dan dilaporkan secara agregat.</li>
           <li>Perkiraan durasi total sekitar 90 menit.</li>
+          <li>Pertanyaan tentang penelitian dapat disampaikan kepada peneliti melalui ammara23004@mail.unpad.ac.id atau 0811-8381-771.</li>
         </ul>
       </div>
       <form onSubmit={kirim} className="card">
