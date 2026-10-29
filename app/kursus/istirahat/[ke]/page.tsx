@@ -99,11 +99,11 @@ function Isi({ ke }: { ke: number }) {
 
   return (
     <div className="rehat">
-      <h1 style={{ fontSize: 30 }}>{habis ? "Istirahat selesai" : "Istirahat"}</h1>
+      <h1>{habis ? "Istirahat selesai" : "Istirahat"}</h1>
       {habis ? (
         <p>Silakan kembali ke komputer dan lanjutkan ke {BLOK[next].nama}.</p>
       ) : (
-        <p style={{ fontSize: 17, maxWidth: 620, margin: "0 auto 8px" }}>
+        <p style={{ maxWidth: 620, margin: "0 auto 8px" }}>
           <b>Lepaskan tangan dari mouse dan keyboard.</b> Jangan menyentuh komputer sampai waktu istirahat selesai.
           Kamu boleh mengobrol, minum, atau meregangkan badan.
         </p>

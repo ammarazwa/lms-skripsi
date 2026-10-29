@@ -16,7 +16,7 @@ export default function Dasbor() {
     <Shell drawer={false} crumbs={[["Dashboard"]]}>
       <div className="dash-head">
         <div>
-          <h1 style={{ fontSize: 26 }}>Hai, Peserta {state?.peserta.kode}</h1>
+          <h1>Hai, Peserta {state?.peserta.kode}</h1>
           <p className="muted" style={{ margin: 0 }}>Selamat datang di ruang eksperimen. Mulai dari kursus di bawah.</p>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function Dasbor() {
                   <div className="course-cat">{CONFIG.COURSE_CATEGORY}</div>
                   <div className="course-name">{CONFIG.COURSE_NAME}</div>
                   <div className="progress"><span style={{ width: pct + "%" }} /></div>
-                  <div className="muted" style={{ fontSize: 12, marginTop: 6 }}>{pct}% complete</div>
+                  <div className="muted ket" style={{ marginTop: 8 }}>{pct}% complete</div>
                 </div>
               </Link>
             </div>

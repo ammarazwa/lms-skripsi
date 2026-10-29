@@ -16,11 +16,11 @@ export default function Kursus() {
   return (
     <Shell crumbs={[["Dashboard", "/dasbor"], ["My courses", "/kursus"], [CONFIG.COURSE_SHORT]]}>
       <div className="course-hero">
-        <div className="muted" style={{ fontSize: 12, fontWeight: 600 }}>{CONFIG.COURSE_CATEGORY}</div>
+        <div className="muted ket" style={{ fontWeight: 600 }}>{CONFIG.COURSE_CATEGORY}</div>
         <h1>{CONFIG.COURSE_NAME}</h1>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 10 }}>
           <div className="progress" style={{ flex: 1, maxWidth: 360, background: "#fff" }}><span style={{ width: (100 * selesai) / items.length + "%" }} /></div>
-          <span className="muted" style={{ fontSize: 13 }}>{selesai} dari {items.length} aktivitas selesai</span>
+          <span className="muted ket">{selesai} dari {items.length} aktivitas selesai</span>
         </div>
       </div>
       {kursus().map((s) => (

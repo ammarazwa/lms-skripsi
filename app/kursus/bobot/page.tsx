@@ -78,7 +78,7 @@ function Isi() {
           </div>
         </div>
       )}
-      <p className="muted" style={{ fontSize: 12 }}>Sumber instrumen: {TLX.sumber}</p>
+      <p className="muted ket">Sumber instrumen: {TLX.sumber}</p>
     </>
   );
 }

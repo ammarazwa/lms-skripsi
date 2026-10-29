@@ -92,7 +92,7 @@ export function BarBlok({ blk, aktif }: { blk: Blk; aktif: number | "bacaan" }) 
         })}
       </nav>
       <span className="spacer" />
-      <span className="muted" style={{ fontSize: 12 }}>{nTerjawab}/{n} terjawab · tersimpan otomatis</span>
+      <span className="muted">{nTerjawab}/{n} terjawab</span>
       <span>Sisa waktu</span>
       <span className={"sisa" + (sisaMs < 60000 ? " kritis" : "")} id="sisa">{mulaiAda ? mmss(sisaMs) : "--:--"}</span>
       <button className="btn btn-primary btn-sm" id="btn-kirim-bar" type="button" onClick={kirim} disabled={!bacaSelesai}>Kirim jawaban</button>

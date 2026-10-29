@@ -24,7 +24,7 @@ function BarReplika({ b, aktif }: { b: number; aktif: number | "bacaan" }) {
         {data.soal.map((s, i) => <a key={s.id} className={i + 1 === aktif ? "aktif" : undefined}>{i + 1}</a>)}
       </nav>
       <span className="spacer" />
-      <span className="muted" style={{ fontSize: 12 }}>0/{data.soal.length} terjawab · tersimpan otomatis</span>
+      <span className="muted">0/{data.soal.length} terjawab</span>
       <span>Sisa waktu</span><span className="sisa">00:00</span><span className="btn btn-primary btn-sm">Kirim jawaban</span>
     </div>
   );
@@ -88,7 +88,7 @@ export function PreviewHalaman({ path }: { path: string }) {
         </div>
         <InstruksiTlx />
         <div>{TLX.skala.map((s) => <SkalaTlx key={s.id} s={s} nilai={undefined} />)}</div>
-        <p className="muted" style={{ fontSize: 12 }}>Sumber instrumen: {TLX.sumber}</p>
+        <p className="muted ket">Sumber instrumen: {TLX.sumber}</p>
         <div className="aksi-bawah" data-zona="aksi"><span className="btn btn-primary btn-lg">Kirim penilaian</span></div>
       </>
     );

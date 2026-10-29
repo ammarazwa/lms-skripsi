@@ -65,7 +65,7 @@ function Isi({ b }: { b: number }) {
       <div id="tlx-form">
         {TLX.skala.map((sk) => <SkalaTlx key={sk.id} s={sk} nilai={nilai[sk.id]} onPilih={(v) => pilih(sk.id, v)} />)}
       </div>
-      <p className="muted" style={{ fontSize: 12 }}>Sumber instrumen: {TLX.sumber}</p>
+      <p className="muted ket">Sumber instrumen: {TLX.sumber}</p>
       <div className="aksi-bawah" data-zona="aksi">
         <button className="btn btn-primary btn-lg" id="btn-kirim-tlx" disabled={kurang > 0 || proses} onClick={kirim}>Kirim penilaian</button>
         <span className="muted">{kurang ? `Masih ${kurang} skala belum diberi tanda.` : "Semua skala sudah diberi tanda."}</span>

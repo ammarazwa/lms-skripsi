@@ -16,7 +16,7 @@ export default function Pengumuman() {
       <article className="card">
         <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 12 }}>
           <span className="avatar" style={{ background: "var(--primary)", color: "#fff" }}>TP</span>
-          <div><b>Tim Peneliti</b><div className="muted" style={{ fontSize: 12 }}>Selamat datang di sesi hari ini</div></div>
+          <div><b>Tim Peneliti</b><div className="muted ket">Selamat datang di sesi hari ini</div></div>
         </div>
         <p>Terima kasih sudah bersedia ikut. Total sesi hari ini sekitar 90 menit, termasuk penjelasan awal.</p>
         <p>Urutannya: latihan singkat memakai LMS, lalu tiga blok soal bergaya Tes Potensi Skolastik (TPS) UTBK. Setiap blok berisi {BLOK[1].soal.length} soal pilihan ganda dan isian. Setelah setiap blok, kamu mengisi formulir NASA-TLX tentang beban kerja yang kamu rasakan.</p>

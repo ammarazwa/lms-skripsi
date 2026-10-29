@@ -62,7 +62,7 @@ function Topbar() {
         )}
         {buka && kode && (
           <div className="user-menu" onMouseLeave={() => setBuka(false)}>
-            <div className="um-head"><b>Peserta {kode}</b><div className="muted" style={{ fontSize: 12 }}>{CONFIG.COURSE_NAME}</div></div>
+            <div className="um-head"><b>Peserta {kode}</b><div className="muted ket">{CONFIG.COURSE_NAME}</div></div>
             <button onClick={() => { setBuka(false); setAkhiri(true); }} data-act="keluar">Log out</button>
           </div>
         )}
@@ -131,7 +131,7 @@ export function Shell({ children, crumbs, drawer = true, butuhConsent = true }: 
   return (
     <>
       <Topbar />
-      <div className="wrap">
+      <div className={"wrap" + (drawer ? "" : " fokus")}>
         {drawer && <Drawer />}
         <main className="page" id="region-main">
           {crumbs && (
