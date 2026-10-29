@@ -27,8 +27,8 @@ export async function bacaPeserta(req: Request): Promise<[Record<string, unknown
 // Saat deploy (Vercel), WAJIB isi FASILITATOR_PIN; nilai bawaan hanya untuk uji lokal.
 export const PIN = process.env.FASILITATOR_PIN || "2468";
 
+/** PIN hanya diterima lewat header x-pin. Dulu boleh lewat ?pin= di URL, tapi itu ikut tersimpan di riwayat browser
+ * dan log request Vercel. */
 export function cekPin(req: Request) {
-  const url = new URL(req.url);
-  const pin = req.headers.get("x-pin") || url.searchParams.get("pin");
-  return pin === PIN;
+  return req.headers.get("x-pin") === PIN;
 }

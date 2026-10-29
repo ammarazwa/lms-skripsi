@@ -17,6 +17,29 @@ export default function Fasilitator() {
   const [input, setInput] = useState("");
   const [data, setData] = useState<Ringkasan | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  const [unduhan, setUnduhan] = useState<string | null>(null);
+
+  /** Unduh CSV lewat fetch + header x-pin, supaya PIN tidak masuk URL (riwayat browser, log server). */
+  async function unduh(k: string) {
+    if (!pin || unduhan) return;
+    setUnduhan(k);
+    try {
+      const r = await fetch(`/api/admin/export/${k}`, { headers: { "x-pin": pin }, cache: "no-store" });
+      if (r.status === 401) { setErr("PIN salah."); setPin(null); return; }
+      if (!r.ok) { setErr(`Ekspor gagal (${r.status}).`); return; }
+      const nama = /filename="([^"]+)"/.exec(r.headers.get("Content-Disposition") || "")?.[1] || `lms_${k.split("?")[0]}.csv`;
+      const url = URL.createObjectURL(await r.blob());
+      const a = document.createElement("a");
+      a.href = url; a.download = nama;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setErr(null);
+    } catch {
+      setErr("Ekspor gagal. Periksa koneksi lalu coba lagi.");
+    } finally {
+      setUnduhan(null);
+    }
+  }
 
   const muat = useCallback(async (p: string) => {
     const r = await fetch("/api/admin/ringkasan", { headers: { "x-pin": p }, cache: "no-store" });
@@ -54,7 +77,8 @@ export default function Fasilitator() {
       <Bar><button className="top-btn" onClick={() => setPin(null)}>Kunci</button></Bar>
       <div className="page page-full">
         <h1>Data pengambilan eksperimen</h1>
-        <p className="muted">Diperbarui otomatis setiap 5 detik. Semua data tersimpan di <code>data/lms.db</code> (SQLite).</p>
+        <p className="muted">Diperbarui otomatis setiap 5 detik. Semua data tersimpan di basis data Supabase (PostgreSQL).</p>
+        {err && <div className="alert alert-danger">{err}</div>}
         {s && (
           <div className="stat-row">
             <div className="stat"><span className="muted">Peserta</span><b>{s.total}</b></div>
@@ -70,7 +94,8 @@ export default function Fasilitator() {
         <h3>Ekspor CSV</h3>
         <div className="export-row">
           {EKSPOR.map(([k, l]) => (
-            <a key={k} className={"btn btn-sm " + (k === "dataset" ? "btn-primary" : "btn-secondary")} href={`/api/admin/export/${k}${k.includes("?") ? "&" : "?"}pin=${encodeURIComponent(pin)}`}>{l}</a>
+            <button key={k} type="button" className={"btn btn-sm " + (k === "dataset" ? "btn-primary" : "btn-secondary")}
+              disabled={unduhan !== null} onClick={() => unduh(k)}>{unduhan === k ? "Mengunduh…" : l}</button>
           ))}
         </div>
         <h3>Peserta</h3>
