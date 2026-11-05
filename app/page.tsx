@@ -46,7 +46,6 @@ export default function Masuk() {
             </button>
           </form>
           <hr className="login-hr" />
-          <p className="login-note">Kode yang berlaku: P01–P60 (peserta), T01–T99 (uji coba), PL01–PL99 (pilot).</p>
           <p className="login-note"><Link href="/fasilitator">Halaman fasilitator</Link></p>
         </div>
         <div className="login-bg">
