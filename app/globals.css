@@ -237,6 +237,7 @@ a.act-nama:hover { color: var(--link); }
 .bahan .tabel { font-size: var(--fs-ket); }
 .bahan .tabel th, .bahan .tabel td { white-space: normal; }
 .bahan .tabel-catatan { font-size: var(--fs-ket); margin-top: 8px; }
+.tabel th.angka, .tabel td.angka { text-align: right; font-variant-numeric: tabular-nums; }
 /* halaman soal gaya UTBK: Bacaan dulu (halaman sendiri, ikut scroll halaman supaya scroll tercatat logger), lalu satu soal
  * per halaman. Nomor soal nonaktif (abu-abu, tanpa tautan) sampai waktu baca minimal selesai. */
 .nav-soal { display: flex; flex-wrap: wrap; gap: 6px; }

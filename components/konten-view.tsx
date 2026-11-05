@@ -16,6 +16,9 @@ export function TeksBahan({ b }: { b: number }) {
   const bahan = BLOK[b]?.bahan;
   if (!bahan) return null;
   const { teks, tabel } = bahan;
+  // Kolom nominal (semua sel berupa angka format Indonesia, mis. 3.000 atau 2,5) rata kanan; jam dan teks tetap rata kiri.
+  const angka = tabel.kolom.map((_, j) => tabel.baris.every((r) => /^-?\d{1,3}(\.\d{3})*(,\d+)?%?$/.test(r[j].trim())));
+  const kelas = (j: number) => (angka[j] ? "angka" : undefined);
   return (
     <article className="bacaan bahan" id="teks-bahan">
       <h2>{teks.judul}</h2>
@@ -23,8 +26,8 @@ export function TeksBahan({ b }: { b: number }) {
       <h2>{tabel.judul}</h2>
       <div className="tabel-wrap" data-zona="tabel-B">
         <table className="tabel">
-          <thead><tr>{tabel.kolom.map((k) => <th key={k}>{k}</th>)}</tr></thead>
-          <tbody>{tabel.baris.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>)}</tbody>
+          <thead><tr>{tabel.kolom.map((k, j) => <th key={k} className={kelas(j)}>{k}</th>)}</tr></thead>
+          <tbody>{tabel.baris.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j} className={kelas(j)}>{c}</td>)}</tr>)}</tbody>
         </table>
       </div>
       {tabel.catatan && <p className="muted tabel-catatan">{tabel.catatan}</p>}
