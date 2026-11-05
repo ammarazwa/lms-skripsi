@@ -32,6 +32,8 @@ export default function Heatmap() {
   const [mode, setMode] = useState<Mode>("klik");
   const [metrik, setMetrik] = useState<MetrikZona>("waktu");
   const [data, setData] = useState<Data | null>(null);
+  const [memuat, setMemuat] = useState(true);
+  const minta = useRef(0);
   const [kotak, setKotak] = useState<Record<string, Kotak>>({});
   const [tinggi, setTinggi] = useState(0);
   const [skala, setSkala] = useState(1);
@@ -43,9 +45,15 @@ export default function Heatmap() {
 
   const muat = useCallback(async () => {
     if (!pin) return;
+    // data filter lama dikosongkan supaya tidak tampil di atas replika halaman baru; respons yang datang terlambat
+    // (filter sudah diganti lagi) diabaikan
+    const id = ++minta.current;
+    setData(null); setMemuat(true);
     const q = new URLSearchParams({ halaman, ...(gender && { gender }), ...(bidang && { bidang }), ...(uji && { uji: "1" }), ...(kode && { kode }) });
-    const r = await fetch("/api/admin/heatmap?" + q, { headers: { "x-pin": pin }, cache: "no-store" });
-    if (r.ok) setData(await r.json());
+    const r = await fetch("/api/admin/heatmap?" + q, { headers: { "x-pin": pin }, cache: "no-store" }).catch(() => null);
+    const j = r?.ok ? await r.json().catch(() => null) : null;
+    if (id !== minta.current) return;
+    setData(j); setMemuat(false);
   }, [pin, halaman, gender, bidang, uji, kode]);
   useEffect(() => { muat(); }, [muat]);
 
@@ -55,14 +63,17 @@ export default function Heatmap() {
     if (!wrap || !inner) return;
     const s = Math.min(1, wrap.clientWidth / info.lebar);
     const ir = inner.getBoundingClientRect();
+    // bagi dengan skala yang SEDANG terpasang (bukan skala baru s): saat pertama dimuat atau setelah ukuran jendela berubah,
+    // replika masih memakai skala lama, sehingga membagi dengan s membuat kotak zona membesar/mengecil sebesar s_lama/s
+    const cur = ir.width / info.lebar || 1;
     const k: Record<string, Kotak> = {};
     inner.querySelectorAll<HTMLElement>("[data-zona]").forEach((el) => {
       const r = el.getBoundingClientRect();
-      k[el.dataset.zona!] = { top: (r.top - ir.top) / s, left: (r.left - ir.left) / s, w: r.width / s, h: r.height / s };
+      k[el.dataset.zona!] = { top: (r.top - ir.top) / cur, left: (r.left - ir.left) / cur, w: r.width / cur, h: r.height / cur };
     });
     const pg = inner.querySelector<HTMLElement>(".page");
-    if (pg) { const r = pg.getBoundingClientRect(); k.main = { top: 0, left: 0, w: r.width / s, h: r.height / s }; }
-    setSkala(s); setKotak(k); setTinggi(pg ? pg.getBoundingClientRect().height / s : 0);
+    if (pg) { const r = pg.getBoundingClientRect(); k.main = { top: 0, left: 0, w: r.width / cur, h: r.height / cur }; }
+    setSkala(s); setKotak(k); setTinggi(pg ? pg.getBoundingClientRect().height / cur : 0);
   }, [info.lebar]);
   useLayoutEffect(() => { ukur(); }, [ukur, halaman, pin]);
   useEffect(() => {
@@ -112,7 +123,7 @@ export default function Heatmap() {
           <label>Peserta
             <select className="form-control" value={kode} onChange={(e) => setKode(e.target.value)}>
               <option value="">Semua (sesuai filter)</option>
-              {(data?.kode_tersedia || []).map((k) => <option key={k} value={k}>{k}</option>)}
+              {(data?.kode_tersedia || (kode ? [kode] : [])).map((k) => <option key={k} value={k}>{k}</option>)}
             </select>
           </label>
           <label>Gender
@@ -127,6 +138,8 @@ export default function Heatmap() {
           </label>
           <label className="hm-cek"><input type="checkbox" checked={uji} disabled={!!kode} onChange={(e) => setUji(e.target.checked)} /> Termasuk kode uji/pilot</label>
         </div>
+        {memuat && <p className="muted">Memuat data heatmap…</p>}
+        {!memuat && !data && pin && <div className="alert alert-danger">Data heatmap gagal dimuat. Coba pilih halaman lagi atau muat ulang.</div>}
         {!!data?.n_uji_tersembunyi && (
           <div className="alert alert-info">
             {data.n_uji_tersembunyi} peserta uji/pilot (kode T/PL) membuka halaman ini tetapi disembunyikan.
@@ -226,7 +239,7 @@ export default function Heatmap() {
           <table className="tabel">
             <thead><tr><th>Zona</th><th>Klik</th><th>Peserta mengklik</th><th>% peserta mengklik</th><th>% peserta melihat</th><th>Rata-rata terlihat (dtk)</th></tr></thead>
             <tbody>
-              {(data?.zona.length ?? 0) === 0 && <tr><td colSpan={6} className="muted">Belum ada data untuk filter ini.</td></tr>}
+              {(data?.zona.length ?? 0) === 0 && <tr><td colSpan={6} className="muted">{memuat ? "Memuat…" : "Belum ada data untuk filter ini."}</td></tr>}
               {[...(data?.zona || [])].sort((a, b) => b.rata_terlihat_s - a.rata_terlihat_s || b.klik - a.klik).map((z) => (
                 <tr key={z.zona} onMouseEnter={() => setHover(z.zona)}>
                   <td>{namaZona(z.zona)}{!kotak[z.zona] && <span className="muted"> (di luar replika)</span>}</td>
