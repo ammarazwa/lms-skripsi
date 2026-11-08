@@ -9,6 +9,7 @@
     "db:init": "node --env-file=.env.local scripts/init-db.mjs"
   },
   "dependencies": {
+    "html-to-image": "1.11.13",
     "next": "16.4.1",
     "postgres": "3.4.9",
     "react": "19.3.0",

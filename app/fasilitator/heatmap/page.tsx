@@ -42,6 +42,8 @@ export default function Heatmap() {
   const innerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const info = HALAMAN_HEATMAP.find((h) => h.path === halaman)!;
+  const [mengunduh, setMengunduh] = useState(false);
+  const [galatUnduh, setGalatUnduh] = useState("");
 
   const muat = useCallback(async () => {
     if (!pin) return;
@@ -94,6 +96,29 @@ export default function Heatmap() {
     });
     gambarHeat(c, titik);
   }, [data, kotak, tinggi, mode, info.lebar]);
+
+  // unduh heatmap sebagai PNG: replika halaman + overlay (canvas klik / pita scroll / zoning) pada ukuran asli, tanpa skala layar
+  const unduhPng = useCallback(async () => {
+    const el = innerRef.current;
+    if (!el || !tinggi || !data) return;
+    setMengunduh(true); setGalatUnduh("");
+    try {
+      const { toPng } = await import("html-to-image");
+      await document.fonts?.ready;
+      const url = await toPng(el, {
+        width: info.lebar, height: Math.ceil(tinggi), pixelRatio: 2, backgroundColor: "#ffffff", cacheBust: true,
+        style: { transform: "none", transformOrigin: "top left" },
+        filter: (n) => !(n instanceof HTMLElement && n.classList.contains("hm-hit")), // lapisan hover tidak ikut
+      });
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `heatmap_${mode}${mode === "zoning" ? "-" + metrik : ""}_${halaman.replace(/^\/kursus\//, "").replace(/\//g, "-")}${kode ? "_" + kode : ""}.png`;
+      document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) {
+      console.error(e);
+      setGalatUnduh("Gagal membuat gambar. Coba lagi.");
+    } finally { setMengunduh(false); }
+  }, [tinggi, data, info.lebar, mode, metrik, halaman, kode]);
 
   const statZona = useMemo(() => Object.fromEntries((data?.zona || []).map((z) => [z.zona, z])), [data]);
   const totalKlik = data?.klik.length || 0;
@@ -162,6 +187,10 @@ export default function Heatmap() {
               </select>
             </label>
           )}
+          <button type="button" className="btn btn-secondary btn-sm" onClick={unduhPng} disabled={mengunduh || memuat || !data || !tinggi}>
+            {mengunduh ? "Membuat gambar…" : "Unduh PNG"}
+          </button>
+          {galatUnduh && <span className="muted" role="alert">{galatUnduh}</span>}
         </div>
 
         <div className="stat-row">
