@@ -116,10 +116,22 @@ export function SesiProvider({ children }: { children: React.ReactNode }) {
 
   const post = useCallback(async (url: string, body: Record<string, unknown>) => {
     flush();
-    const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kode: kodeRef.current, ...body }) });
-    const j = await r.json().catch(() => ({}));
-    if (!r.ok) { alert(j.error || "Terjadi kesalahan. Panggil fasilitator."); return null; }
-    if (j && j.peserta) { terima(j); return j as State; }
+    // Semua endpoint yang lewat post() idempoten (ON CONFLICT / cek langkah), jadi aman diulang bila jaringan atau DB sempat gagal sesaat.
+    // Galat 4xx = penolakan server yang disengaja → tidak diulang. Galat 5xx / jaringan / timeout → diulang hingga 3 kali.
+    const payload = JSON.stringify({ kode: kodeRef.current, ...body });
+    for (let i = 0; i < 3; i++) {
+      try {
+        const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, signal: AbortSignal.timeout(15000) });
+        const j = await r.json().catch(() => ({}));
+        if (r.ok) {
+          if (j && j.peserta) { terima(j); return j as State; }
+          return null;
+        }
+        if (r.status < 500) { alert(j.error || "Terjadi kesalahan. Panggil fasilitator."); return null; }
+      } catch { /* jaringan putus / timeout → coba lagi */ }
+      if (i < 2) await new Promise((res) => setTimeout(res, 700 * (i + 1)));
+    }
+    alert("Koneksi bermasalah. Coba lagi, atau panggil fasilitator.");
     return null;
   }, [flush, terima]);
 
