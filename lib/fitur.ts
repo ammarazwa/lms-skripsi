@@ -1,6 +1,8 @@
-/* Ekstraksi fitur interaksi per peserta × blok — definisinya SAMA dengan pipeline skripsi
- * (Pipeline_Final_Skripsi_Ammara/src/p2_data.py `hitung_log` dan p3_fitur.py `fitur_log`), sehingga CSV dataset dari LMS
- * langsung terbaca notebook (MODE 'dataset') tanpa coding Hotjar.
+/* Ekstraksi fitur interaksi per peserta × blok — kolom CSV sama dengan pipeline skripsi
+ * (Pipeline_Final_Skripsi_Ammara/src/p3_fitur.py `fitur_log`), sehingga CSV dataset dari LMS
+ * langsung terbaca notebook (MODE 'dataset') tanpa coding Hotjar. Definisi U-turn (09-11-2026): setiap perpindahan mundur
+ * ke halaman yang lebih awal dalam urutan halaman blok, tanpa batas waktu (lihat `uTurn`); `hitung_log` di p2_data.py
+ * hanya dipakai jalur lama (Hotjar/mock) dan tidak lagi menjadi acuan.
  *
  * Segmen blok b: t0 = halaman blok b (Bacaan /kursus/blok/b/bacaan atau soal /kursus/blok/b/N) pertama kali terbuka,
  * t1 = halaman NASA-TLX blok b pertama kali terbuka. Waktu baca termasuk segmen (masuk batas 15 menit). Istirahat,
@@ -39,12 +41,24 @@ function segmen(ev: Ev[], t: Record<string, number>, b: number) {
   return t1 > t0 ? { t0, t1 } : null;
 }
 
-/** U-turn: page view ke-i di dalam segmen, lalu dalam ≤ 7 detik kembali ke halaman sebelum i (p2_data.hitung_log). */
+/** Urutan halaman dalam satu blok: mulai (0) → Bacaan (1) → soal ke-n (1 + n). Halaman lain (NASA-TLX, istirahat, forum) → null. */
+function urutHalaman(page: string): { b: number; i: number } | null {
+  const m = page.match(/^\/kursus\/blok\/(\d)\/(mulai|bacaan|\d+)$/);
+  if (!m) return null;
+  return { b: Number(m[1]), i: m[2] === "mulai" ? 0 : m[2] === "bacaan" ? 1 : 1 + Number(m[2]) };
+}
+
+/** U-turn: jumlah navigasi kembali ke halaman sebelumnya, yaitu setiap page view di dalam segmen yang berpindah ke halaman
+ * yang lebih awal dalam urutan halaman blok yang sama (soal → Bacaan, soal n → soal sebelumnya, dst.). Tidak ada batas waktu,
+ * dan tidak dibedakan apakah lewat tombol "Sebelumnya", navigasi nomor soal/Bacaan, atau tombol back browser. Muat ulang
+ * halaman yang sama tidak dihitung. */
 function uTurn(ev: Ev[], t0: number, t1: number) {
   const pv = ev.filter((e) => e.tipe === "pv");
   let n = 0;
-  for (let i = 1; i < pv.length - 1; i++) {
-    if (pv[i].ts >= t0 && pv[i].ts < t1 && pv[i + 1].ts < t1 && pv[i + 1].ts - pv[i].ts <= 7000 && pv[i + 1].page === pv[i - 1].page) n++;
+  for (let i = 1; i < pv.length; i++) {
+    if (pv[i].ts < t0 || pv[i].ts >= t1) continue;
+    const dari = urutHalaman(pv[i - 1].page), ke = urutHalaman(pv[i].page);
+    if (dari && ke && dari.b === ke.b && ke.i < dari.i) n++;
   }
   return n;
 }

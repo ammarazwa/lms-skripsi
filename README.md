@@ -130,7 +130,7 @@ membacanya dari CSV `dataset` (`FITUR_EXT`).
 | `click_count` | jumlah klik di segmen |
 | `text_input_chars` | jumlah tombol huruf + spasi |
 | `page_visits` | jumlah page view di segmen (Bacaan dan soal, termasuk kembali ke halaman sebelumnya) |
-| `u_turn_count` | kembali ke halaman sebelumnya ≤ 7 detik (A→B→A) |
+| `u_turn_count` | jumlah navigasi kembali ke halaman sebelumnya: setiap perpindahan ke halaman yang lebih awal dalam urutan halaman blok (Bacaan → soal 1…n), lewat tombol "Sebelumnya", navigasi nomor soal/Bacaan, atau tombol back browser; tanpa batas waktu; sumber: urutan `pv` |
 | tambahan | `idle_ratio` (jeda ≥ 5 dtk), `click_rate_per_min`, `deletion_ratio`, `burst_len_mean` / `inter_burst_pause_s` (burst putus bila jeda > 2 dtk), `story_revisits` (kembali ke soal yang sudah pernah dibuka di blok itu), `mouse_dist_per_min`, `rage_click_count` (≥ 5 klik dalam 500 ms), `text_return_count` (membuka Bacaan lagi setelah soal pertama dibuka), `text_return_time_s` (total lama di Bacaan saat kembali) |
 | info | `initial_reading_s`: lama membaca dari awal segmen sampai soal pertama dibuka (bukan fitur model) |
 
